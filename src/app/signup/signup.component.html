@@ -1,0 +1,21 @@
+<div class="container">
+  <input type="checkbox" id="check">
+  <div class="login form">
+    <header>Sign up</header>
+    <!-- Add a div to display the error message -->
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="login" placeholder="Enter your login">
+      <input type="password" formControlName="pwd" placeholder="Enter your password">
+      <input type="text" formControlName="userName" placeholder="Enter your username">
+      <select formControlName="role">
+        <option value="" disabled>Select a role</option>
+        <option *ngFor="let role of roles" [value]="role.id">{{ role.titre }}</option>
+      </select>
+      <input type="submit" class="button" value="SignUp">
+    </form>
+    <div class="signup">
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </div>
+  </div>
+</div>

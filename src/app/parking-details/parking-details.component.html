@@ -1,0 +1,48 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Parking Details</h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Id</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{parking.id}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Full</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{parking.full}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Position</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{parking.position}}</div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Managers</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Login</th>
+                <th>User Name</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let manager of managers">
+                <td>{{ manager.id }}</td>
+                <td>{{ manager.login }}</td>
+                <td>{{ manager.userName }}</td>
+                <td>{{ manager.role.titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

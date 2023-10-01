@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Affect Parking</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Parking Position" [(ngModel)]="parkingPosition">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onAffect()">Affect</button>
+</div>

@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Enter Vehicle Matricule</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Matricule" [(ngModel)]="matricule">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSubmit()" [disabled]="matricule.trim() === ''">Add Vehicle</button>
+</div>

@@ -1,0 +1,21 @@
+<form (submit)="createReservation()">
+    <label>Date d'entrée:</label>
+    <input type="date" [(ngModel)]="Reservation.dateEntre" required>
+  
+    <label>Date de sortie:</label>
+    <input type="date" [(ngModel)]="Reservation.dateSortie" required>
+  
+    <label>vehiculeId:</label>
+    <input type="number" [(ngModel)]="Reservation.vehiculeId" required>
+  
+    <label>ID de la place:</label>
+    <input type="number" [(ngModel)]="Reservation.placeId" required>
+  
+    <button type="submit">Réserver</button>
+  </form>
+   
+  
+  
+  
+  
+  

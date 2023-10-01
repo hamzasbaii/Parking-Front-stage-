@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Enter parking Position</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput placeholder="Position" [(ngModel)]="position">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSubmit()" [disabled]="position.trim() === ''">Add Parking</button>
+</div>

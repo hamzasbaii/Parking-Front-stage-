@@ -1,0 +1,27 @@
+<h2>Parkings List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Full</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let parking of parkings">
+            <td>{{ parking.id }}</td>
+            <td>{{ parking.full }}</td>
+            <td>{{ parking.position }}</td>
+            <td>
+                <button (click)="updateParking(parking.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteParking(parking.id)" class="btn btn-danger"
+                    style="margin-left: 10px">Delete</button>
+                <button (click)="parkingDetails(parking.id)" class="btn btn-info" style="margin-left: 10px">View
+                    Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div style="display: flex; justify-content: center; margin-top: 80px;">
+    <button (click)="createParking()" class="btn btn-primary">Create parking</button>
+</div>

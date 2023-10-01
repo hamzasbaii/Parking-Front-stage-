@@ -1,0 +1,91 @@
+<div class="col-md-6 offset-md-3">
+    <h3>User Details</h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Id</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{user.id}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Username</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{user.userName}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Login</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{user.login}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Password</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{user.pwd}}</div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6 class="mb-0">Role</h6>
+                </div>
+                <div class="col-sm-9 text-secondary"> {{user.role.titre}}</div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Vehicules</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Matricule</th>
+                <th>type</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vehicule of vehicules">
+                <td>{{ vehicule.id }}</td>
+                <td>{{ vehicule.matricule }}</td>
+                <td>{{ vehicule.type }}</td>
+                <td>
+                    <button (click)="removeVehicleFromUser(vehicule.id)">Remove</button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" (click)="openAddVehicleDialog()">Affect Vehicle</button>
+
+    <h4>Parkings</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full</th>
+                <th>Position</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let parking of managedParkings">
+                <td>{{ parking.id }}</td>
+                <td>{{ parking.full }}</td>
+                <td>{{ parking.position }}</td>
+                <td>
+                    <button (click)="removeParkingFromUser(parking.id)">Remove</button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-primary" (click)="openAddParkingDialog()">Affect Parking</button>
+    
+
+</div>

@@ -1,0 +1,27 @@
+<h2>Vehicules List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Matricule</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vehicule of vehicules">
+            <td>{{ vehicule.id }}</td>
+            <td>{{ vehicule.type }}</td>
+            <td>{{ vehicule.matricule }}</td>
+            <td>
+                <button (click)="updateVehicule(vehicule.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteVehicule(vehicule.id)" class="btn btn-danger"
+                    style="margin-left: 10px">Delete</button>
+                <button (click)="vehiculeDetails(vehicule.id)" class="btn btn-info" style="margin-left: 10px">View
+                    Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div style="display: flex; justify-content: center; margin-top: 80px;">
+    <button (click)="createVehicule()" class="btn btn-primary">Create vehicule</button>
+</div>
